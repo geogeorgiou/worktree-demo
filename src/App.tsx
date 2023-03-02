@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import reactLogo from "./assets/react.svg";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
@@ -15,20 +15,29 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+      <h1>Vite + React (Worktree Mode)</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <div>Summary</div>
+        <br />
+        <button>
+          Not a perfect workflow 🤔 but very useful 💪 when lot's of code is not
+          pushed yet and we don’t want to check what's working and what's not..
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <br />
+        <br />
+        <button>
+          It's flow friendly 🤩 since you don't have to think ! Just cd to
+          worktree, get changes/install and start 💻
+        </button>
       </div>
+      <p>Caveats:</p>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        1. Cannot checkout the same branch twice 🚫!!!
       </p>
+      <p className="read-the-docs">2. Worktree 🌲 remove !== Branch delete </p>
+      <p className="read-the-docs">3. Create 🗂 and install dummy worktree </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
