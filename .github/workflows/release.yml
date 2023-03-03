@@ -21,11 +21,18 @@ jobs:
         with:
           node-version: 16.x
           cache: "pnpm"
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run changeset status # This makes action fail if there are any uncommitted changesets
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check for Changesets
+        run: pnpm run changeset status # This makes action fail if there are any uncommitted changesets
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
           publish: pnpm run release
-          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
