@@ -28,3 +28,4 @@ jobs:
         uses: changesets/action@v1
         with:
           publish: pnpm run release
+          token: ${{ secrets.GITHUB_TOKEN }}
