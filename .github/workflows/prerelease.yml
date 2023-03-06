@@ -20,7 +20,4 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Check for Changesets
-        run: pnpm run changeset status # This makes action fail if there are any uncommitted changesets
-
       - run: pnpm run prerelease
