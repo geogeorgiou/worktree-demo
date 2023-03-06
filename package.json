@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "changeset": "changeset",
     "prerelease": "vite build",
+    "version": "changeset version",
     "release": "changeset publish"
   },
   "dependencies": {
