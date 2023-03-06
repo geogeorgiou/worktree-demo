@@ -17,10 +17,10 @@ jobs:
           node-version: 16.x
           cache: "pnpm"
 
-      - name: Check for Changesets
-        run: pnpm run changeset status # This makes action fail if there are any uncommitted changesets
-
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Check for Changesets
+        run: pnpm run changeset status # This makes action fail if there are any uncommitted changesets
 
       - run: pnpm run prerelease
